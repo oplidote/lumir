@@ -1,0 +1,881 @@
+@charset 'utf-8';
+@import url('../css/notosanskr/NotoSansKR.css');
+@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline-style: none;
+}
+
+.Bounce {
+    animation-name: Bounce;
+}
+
+@keyframes Bounce {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes circlePoint {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+
+a {
+    color: #fff;
+    /* #111 */
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1.4em;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+html {
+    display: block;
+}
+
+body {
+    font-family: "Spoqa Han Sans Neo", 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    color: #111;
+    /* #111 */
+    background-color: #000;
+}
+
+/* 공통영역 */
+.container {
+    position: relative;
+    display: block;
+    max-width: 1600px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.wrap {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+/* 헤더 */
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    display: block;
+}
+
+.gnb-field {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: calc(50% + 40px);
+    border-top: 1px solid #e5e5e5;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(17, 17, 17, 0.85);
+    transition: .3s;
+}
+
+.header .container {
+    display: flex;
+    width: 100%;
+    height: 158px;
+    align-items: center;
+    transition: all .3s ease;
+}
+
+.down .container {
+    height: 80px !important;
+
+    box-shadow: 0 0 2px rgb(0 0 0 / 30%);
+    background: rgba(17, 17, 17, 0.85);
+}
+
+.logo {
+    position: relative;
+    width: 110px;
+    height: 32px;
+    background: url('../images/logo_w.png')no-repeat center;
+}
+
+.nav {
+    position: relative;
+    display: flex;
+    margin-left: auto;
+}
+
+.gnb {
+    position: relative;
+    display: flex;
+}
+
+.gnb>li {
+    padding: 0 40px;
+}
+
+.gnb>li>a {
+    position: relative;
+    display: block;
+    font-size: 16px;
+    white-space: nowrap;
+    transition: all .3s ease;
+}
+
+.gnb>li:hover>a {
+    color: #00B5F9;
+}
+
+.submenu {
+    position: absolute;
+    padding-bottom: 30px;
+    top: 65px;
+    margin-left: -20px;
+    display: flex;
+}
+
+.gnb>li:first-child .submenu {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.submenu>li {
+    padding: 0 20px;
+}
+
+
+.gnb>li:first-child .submenu li {
+    flex: 1 1 auto;
+    padding: 0;
+    width: 25%;
+}
+
+.gnb>li:first-child .submenu li a+a {
+    padding-right: 70px;
+    word-break: keep-all;
+}
+
+.submenu-col {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    line-height: 3;
+    white-space: nowrap;
+}
+
+.li-on .submenu-col {
+    animation: Bounce .6s ease .3s both;
+}
+
+.submenu-col:hover {
+    color: #00B5F9;
+}
+
+.submenu-row {
+    position: relative;
+    display: block;
+    padding-right: 70px;
+    padding-left: 10px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    word-break: keep-all;
+    transition: all .3s ease;
+}
+
+.li-on .submenu-row {
+    animation: Bounce .6s ease .6s both;
+}
+
+.submenu-row:hover {
+    color: #9F4EC5;
+}
+
+.submenu-row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    display: block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #999;
+}
+
+.userarea {
+    position: relative;
+    display: flex;
+    margin-left: 40px;
+    align-items: center;
+}
+
+.service {
+    position: relative;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.service::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 1px;
+    height: 9px;
+    margin: 0 35px 0 30px;
+    background: #ebebeb;
+}
+
+.language {
+    position: relative;
+    display: block;
+    margin-right: 45px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.language a {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.kor {
+    position: relative;
+    display: inline-block;
+
+}
+
+.kor::after {
+    content: '';
+    position: relative;
+    top: -1px;
+    margin-left: 16px;
+    line-height: 1.4em;
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    background: url('../images/ico_language_arrow_w.png')no-repeat;
+    transition: transform .3s;
+}
+
+.lang-active .kor::after {
+    transition: transform .3s;
+    transform: rotate(180deg);
+}
+
+.eng {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 18px;
+    color: #111;
+    text-align: center;
+    background-color: #fff;
+    transition: height .3s;
+}
+
+.eng-area {
+    position: absolute;
+    top: 28px;
+    left: -36px;
+    display: block;
+    overflow: hidden;
+    width: 90px;
+    height: 0;
+    transition: height .2s;
+}
+
+.lang-active .eng-area {
+    height: 36px;
+    transition: height .2s;
+}
+
+.all-menu-bt {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.all-menu-bt::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - 4px);
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    height: 1px;
+    transition: all .3s ease;
+
+}
+
+.all-menu-bt::after {
+    content: '';
+    position: absolute;
+    top: calc(50% + 4px);
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    height: 1px;
+    transition: all .3s ease;
+}
+
+.all-menu-bt:hover::before {
+    top: calc(50% - 6px);
+}
+
+.all-menu-bt:hover::after {
+    top: calc(50% + 6px);
+}
+
+/* // 헤더 */
+/* 메인 */
+.main {
+    position: relative;
+    display: block;
+    top: 0;
+}
+
+/* 비주얼 */
+.visual {
+    position: relative;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1000px;
+}
+
+.visual-bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    display: block;
+    background: url('../images/img_main_visual.png')no-repeat center;
+}
+
+.cap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.visual-txt {
+    position: absolute;
+    top: 300px;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+.visual-txt img {
+    position: relative;
+    top: 120px;
+    display: block;
+    transition: .7s cubic-bezier(.3, .90, .95, .99);
+}
+
+.txt-up img {
+    top: 0 !important;
+}
+
+.story-more {
+    position: absolute;
+    bottom: 230px;
+    font-size: 24px;
+    display: block;
+}
+
+.story-more::after {
+    content: '';
+    position: relative;
+    margin-top: 20px;
+    width: 32px;
+    height: 12px;
+    display: block;
+    background: url('../images/btn_main_arrow.png')no-repeat center;
+    transition: transform .3s;
+}
+
+.story-more:hover {
+    text-decoration: underline;
+}
+
+.story-more:hover::after {
+    transform: translateX(100%);
+}
+
+/* // 비주얼 */
+/* 비즈니스 */
+.business {
+    position: relative;
+    display: block;
+    padding: 150px 0 150px;
+    background: #f3f3f3;
+}
+
+.planet {
+    position: absolute;
+    top: 0;
+    right: -105px;
+    opacity: 0;
+    display: block;
+    transition: .8s;
+}
+
+.planet-active {
+    opacity: 1;
+    top: -116px;
+}
+
+.business .container {}
+
+.business-tit {
+    position: relative;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.business-txt {
+    position: relative;
+    display: block;
+    font-size: 24px;
+    color: #000;
+    line-height: 1.5;
+    margin-bottom: 85px;
+}
+
+.business-list {
+    position: relative;
+    display: flex;
+}
+
+.business-active {}
+
+.business-item {
+    visibility: hidden;
+}
+
+.business-active .business-item {
+    visibility: visible;
+    animation: Bounce .6s ease both;
+
+}
+
+.business-active .business-item:nth-child(1) {
+    animation-delay: .3s;
+
+}
+
+.business-active .business-item:nth-child(2) {
+    animation-delay: .5s;
+
+}
+
+.business-active .business-item:nth-child(3) {
+    animation-delay: .7s;
+
+}
+
+.business-item+.business-item {
+    padding-left: 60px;
+}
+
+.business-img {
+    overflow: hidden;
+}
+
+.business-img img {
+    transform: scale(1);
+    transition: .3s;
+}
+
+.business-item:hover img {
+    transform: scale(1.1);
+}
+
+.txt-box {
+    position: relative;
+    display: block;
+    margin-top: 60px;
+    padding-left: 60px;
+
+}
+
+.number {
+    position: absolute;
+    left: 0;
+    display: block;
+    font-family: 'GongGothicMedium';
+    font-size: 12px;
+}
+
+.item-tit {
+    position: relative;
+    display: flex;
+    margin-bottom: 25px;
+    line-height: 30px;
+    overflow: hidden;
+}
+
+.item-tit span {
+    font-size: 30px;
+    line-height: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-tit span::after {
+    content: '';
+    position: absolute;
+    right: 100%;
+    bottom: 1px;
+    width: 300%;
+    height: 1px;
+    background-color: #111;
+}
+
+.business-item:hover .item-tit span::after {
+    right: -300%;
+    transition: right .6s;
+}
+
+.item-desc {
+    font-size: 15px;
+}
+
+/* // 비즈니스 */
+/* 프로덕트 */
+.product {
+    position: relative;
+    display: block;
+    padding: 150px 0 180px;
+    background: url('../images/bg_sec02.png')no-repeat center center / cover;
+}
+
+.product .container {
+    position: relative;
+    height: 540px;
+}
+
+.product-tit {
+    position: relative;
+    display: block;
+}
+
+.view-more {
+    position: relative;
+    display: inline-block;
+    width: 130px;
+    margin-top: 45px;
+    font-size: 14px;
+    color: #fff;
+    transition: all .3s ease;
+}
+
+.view-more span::before {
+    content: '';
+    margin-right: 10px;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
+    transition: width .3s;
+}
+
+.view-more:hover span::before {
+    width: 0;
+    margin-right: 0;
+}
+
+.view-more span::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    opacity: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: rotate(45deg);
+    transition: .3s;
+
+}
+
+.view-more:hover span::after {
+    opacity: 1;
+    margin-left: 14px;
+}
+
+/* 궤도 */
+.orbit {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 20px;
+}
+
+.satl {
+    position: relative;
+    width: 540px;
+    height: 540px;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.8);
+}
+
+.satl a {
+    position: absolute;
+    top: -20px;
+    left: calc(50% - 20px);
+
+    display: block;
+    width: 40px;
+    height: 40px;
+    transform-origin: center 290px;
+}
+.satl a::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+.satl a::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: #fff;
+    animation: circlePoint 2s ease both infinite;
+    transition: all .3s ease;
+}
+
+.point-1 {
+}
+.point-1 span{
+    top: -20px;
+}
+
+.point-2 {
+    transform: rotate(72deg);
+}
+.point-2 span{
+    transform: translateY(-20px) rotate(-72deg);
+}
+
+.point-3 {
+    transform: rotate(144deg);
+}
+.point-3 span{
+    transform: translateY(-20px) rotate(-144deg);
+}
+
+.point-4 {
+    transform: rotate(216deg);
+}
+.point-4 span{
+    transform: translateY(-20px) rotate(-216deg);
+}
+
+.point-5 {
+    transform: rotate(288deg);
+}
+.point-5 span{
+    transform: translateY(-20px) rotate(-288deg);
+}
+
+.satl span {
+    position: relative;
+    left: -50px;
+    width: 140px;
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    color: #fff;
+    font-size: 15px;
+    transform-origin: center 40px;
+}
+
+
+
+.sw-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+}
+
+.sw-orbit-box {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slide-tit {
+    position: relative;
+    transform: translateY(-20px);
+
+    opacity: 0;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 34px;
+    color: #fff;
+    text-align: center;
+    transition: .3s ease;
+}
+
+.swiper-slide-active .slide-tit {
+    transform: translateY(0px);
+
+    opacity: 1;
+}
+
+.slide-txt {
+    position: relative;
+    transform: translateY(20px);
+    opacity: 1;
+    display: block;
+    font-size: 18px;
+    color: #dbdbdb;
+    text-align: center;
+    transition: .3s ease .1s;
+}
+
+.swiper-slide-active .slide-txt {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slide-txt a {
+    line-height: 2.55em;
+}
+
+.slide-img {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 90px;
+    margin: 30px auto 45px;
+}
+
+.swiper-slide:nth-child(1) .slide-img {
+    background: url('../images/ico_product_1.png')no-repeat center;
+}
+.swiper-slide:nth-child(4) .slide-img {
+    background: url('../images/ico_product_2.png')no-repeat center;
+}
+.swiper-slide:nth-child(5) .slide-img {
+    background: url('../images/ico_product_3.png')no-repeat center;
+}
+
+.slide-more {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 14px;
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    text-align: center;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.slide-more:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* //프로덕트 */
+/* 슬로건 */
+.slogan {}
+
+/* // 슬로건 */
+/* 뉴스 */
+.news {}
+
+/* // 뉴스 */
+/* 이야기 */
+.story {}
+
+/* // 이야기 */
+/* 채용 */
+.recruit {}
+
+/* // 채용 */
+/* // 메인 */
+/* 하단 */
+.footer {}
+
+/* //하단 */

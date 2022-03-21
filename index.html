@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>루미르 주식회사 (Clone)</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="images/mobile_web_icon.png">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <![endif]-->
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/swiper/swiper.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-animate-css-rotate-scale.js"></script>
+    <script src="js/script.js"></script>
+
+    <link rel="stylesheet" href="js/swiper/swiper.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="modal">
+        <div class="cap"></div>
+        <div class="modal-wrap">
+            <b>이 사이트는 학습용으로 제작되었으며<br>리소스는 원저작자에게 있습니다.</b>
+            ※ 본 사이트는 Chrome 에 최적화 되어있습니다.
+            <div class="modal-comment">
+                <a href="#" class="comment-bt">작업리뷰</a>
+                <div class="comment-box">
+                    <p>
+                        # 2022.03.11 19:16 #<br>
+                        처음 작업해본 반응형 웹 <br>
+                        반응형에 많은 걱정이 있었지만 <br>
+                        생각보다 단순하고 노가다(?)적인 <br>
+                        부분이 많았다. 돌아보니<br>
+                        하드코딩에 리팩토링이 없어 <br>
+                        비효율적인 부분이 상당히 많다. <br>
+                        다음 작업엔 하드코딩된 부분을 비롯해 <br>
+                        라이브러리를 적극 활용해볼 예정이다. <br>
+                        (애니메이션관련) <br>
+                    </p>
+                </div>
+            </div>
+
+            <button class="modal-close"></button>
+        </div>
+    </div>
+
+    <!-- 전체 레이아웃 -->
+
+    <div class="wrap">
+
+        <!-- 헤더 -->
+        <div class="gotop"></div>
+        <header class="header">
+            <div class="gnb-field"></div>
+            <div class="container">
+                <a href="index.html" class="logo"></a>
+                <nav class="nav">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#">제품 및 기술</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" class="submenu-col">소형 SAR 위성 시스템</a></li>
+                                <li>
+                                    <a href="#" class="submenu-col">소형 SAR 탑재체</a></li>
+                                <li>
+                                    <a href="#" class="submenu-col">SAR 영상처리시스템</a></li>
+                                <li>
+                                    <a href="#" class="submenu-col">위성 탑재 장치</a>
+                                    <a href="#" class="submenu-row">달 탐사용 통신장치</a>
+                                    <a href="#" class="submenu-row">다채널 SAR 장치</a>
+                                    <a href="#" class="submenu-row">영상자료처리장치</a>
+                                    <a href="#" class="submenu-row">제어모멘텀자이로 제어장치</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="submenu-col">전기지상지원장비</a>
+                                    <a href="#" class="submenu-row">X-밴드 하향링크모듈 전기지상지원장비</a>
+                                    <a href="#" class="submenu-row">위성 본체 전력계 전기지상지원장비</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">헤리티지</a>
+                            <ul class="submenu">
+                                <li><a href="#" class="submenu-col">핵심역량</a></li>
+                                <li><a href="#" class="submenu-col">기술 성장</a></li>
+                                <li><a href="#" class="submenu-col">제조공정설비</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">미디어</a>
+                            <ul class="submenu">
+                                <li><a href="#" class="submenu-col">보도자료</a></li>
+                                <li><a href="#" class="submenu-col">홍보자료</a></li>
+                                <li><a href="#" class="submenu-col">공지사항</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">스토리</a>
+                            <ul class="submenu">
+                                <li><a href="#" class="submenu-col">CI 스토리</a></li>
+                                <li><a href="#" class="submenu-col">루미르 스토리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">인재채용</a>
+                            <ul class="submenu">
+                                <li><a href="#" class="submenu-col">인재상</a></li>
+                                <li><a href="#" class="submenu-col">채용정보</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">회사소개</a>
+                            <ul class="submenu">
+                                <li><a href="#" class="submenu-col">연혁</a></li>
+                                <li><a href="#" class="submenu-col">오시는길</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="userarea">
+                    <a href="#" class="service">고객문의</a>
+                    <div class="language">
+                        <a href="#" class="kor">KR</a>
+                        <div class="eng-area">
+                            <a href="#" class="eng">EN</a>
+                        </div>
+                    </div>
+                    <div class="all-menu-bt"></div>
+                </div>
+            </div>
+        </header>
+        <!-- // 헤더 -->
+
+        <!-- 전체 메뉴 -->
+        <div class="all-menu">
+            <div class="all-menu-wrap">
+                <div class="light"></div>
+                <div class="container">
+                    <div class="all-menu-top">
+                        <a href="index.html" class="logo"></a>
+                        <button class="all-menu-close"></button>
+                    </div>
+                    <div class="all-menu-main">
+                        <div class="all-menu-left">
+                            <div class="all-language">
+                                <a href="#" class="lang-on">KR</a>
+                                <a href="#" class="">EN</a>
+                            </div>
+                            <div class="all-info">
+                                <div class="all-info-tit">ADDRESS</div>
+                                <div class="all-info-txt">
+                                    경기도 용인시 수지구 신수로 767, A-1103
+                                    <br>
+                                    동천동, 분당수지 U-TOWER
+                                </div>
+                            </div>
+                            <div class="all-info">
+                                <div class="all-info-tit">CONTACT US</div>
+                                <div class="all-info-txt">
+                                    전화 031-525-3800
+                                    <br>
+                                    팩스 031-525-3801
+                                </div>
+                            </div>
+                        </div>
+                        <div class="all-menu-right">
+                            <ul class="all-gnb">
+                                <li>
+                                    <a href="#" class="all-tit"><span>제품 및 기술</span></a>
+                                    <ul class="all-sub">
+                                        <li>
+                                            <a href="#" class="all-sub-col">소형 SAR 위성 시스템</a></li>
+                                        <li>
+                                            <a href="#" class="all-sub-col">소형 SAR 탑재체</a></li>
+                                        <li>
+                                            <a href="#" class="all-sub-col">SAR 영상처리시스템</a></li>
+                                        <li>
+                                            <a href="#" class="all-sub-col">위성 탑재 장치</a>
+                                            <a href="#" class="all-sub-row">달 탐사용 통신장치</a>
+                                            <a href="#" class="all-sub-row">다채널 SAR 장치</a>
+                                            <a href="#" class="all-sub-row">영상자료처리장치</a>
+                                            <a href="#" class="all-sub-row">제어모멘텀자이로 제어장치</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="all-sub-col">전기지상지원장비</a>
+                                            <a href="#" class="all-sub-row">X-밴드 하향링크모듈 전기지상지원장비</a>
+                                            <a href="#" class="all-sub-row">위성 본체 전력계 전기지상지원장비</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="all-tit"><span>헤리티지</span></a>
+                                    <ul class="all-sub">
+                                        <li><a href="#" class="all-sub-col">핵심역량</a></li>
+                                        <li><a href="#" class="all-sub-col">기술 성장</a></li>
+                                        <li><a href="#" class="all-sub-col">제조공정설비</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="all-tit"><span>미디어</span></a>
+                                    <ul class="all-sub">
+                                        <li><a href="#" class="all-sub-col">보도자료</a></li>
+                                        <li><a href="#" class="all-sub-col">홍보자료</a></li>
+                                        <li><a href="#" class="all-sub-col">공지사항</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="all-tit"><span>스토리</span></a>
+                                    <ul class="all-sub">
+                                        <li><a href="#" class="all-sub-col">CI 스토리</a></li>
+                                        <li><a href="#" class="all-sub-col">루미르 스토리</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="all-tit"><span>인재채용</span></a>
+                                    <ul class="all-sub">
+                                        <li><a href="#" class="all-sub-col">인재상</a></li>
+                                        <li><a href="#" class="all-sub-col">채용정보</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="all-tit"><span>회사소개</span></a>
+                                    <ul class="all-sub">
+                                        <li><a href="#" class="all-sub-col">연혁</a></li>
+                                        <li><a href="#" class="all-sub-col">오시는길</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 메인 -->
+        <div class="main">
+            <!-- 비주얼 -->
+            <section class="visual">
+                <div class="visual-bg">
+                    <div class="cap"></div>
+                </div>
+                <div class="container">
+                    <div class="visual-txt">
+                        <img src="/images/img_visual_text.png" alt="">
+                    </div>
+                    <a href="#" class="story-more">CI Story</a>
+                </div>
+            </section>
+            <!-- // 비주얼 -->
+            <!-- 비즈니스 -->
+            <section class="business">
+                <div class="planet">
+                    <img src="images/img_sec01.png" alt="">
+                </div>
+                <div class="container">
+                    <div class="business-tit">
+                        <img src="images/tit_sec01.png" alt="">
+                    </div>
+                    <span class="business-txt">
+                        루미르는 인공위성 탑재장치부터 인공위성 시스템, 위성기반 정보 서비스 사업에 이르기까지 광범위한
+                        <!-- <br> -->
+                        우주개발 사업 역량을 보유하고 있습니다.
+                    </span>
+                    <ul class="business-list">
+                        <li class="business-item">
+                            <div class="business-img">
+                                <img src="images/img_sec01_1.png" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <span class="number">/ 01</span>
+                                <div class="item-tit">
+                                    <span>인공위성 시스템</span>
+                                </div>
+                                <span class="item-desc">
+                                    전천후 지구관측이 가능한 소형 SAR
+                                    <br>
+                                    위성 시스템
+                                </span>
+                            </div>
+                        </li>
+                        <li class="business-item">
+                            <div class="business-img">
+                                <img src="images/img_sec01_2.png" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <span class="number">/ 02</span>
+                                <div class="item-tit">
+                                    <span>인공위성 탑재장치</span>
+                                </div>
+                                <span class="item-desc">
+                                    관측, 자료저장, 통신, 제어 등 위성
+                                    <br>
+                                    의 임무에 따라 필요한 탑재 장치
+                                </span>
+                            </div>
+                        </li>
+                        <li class="business-item">
+                            <div class="business-img">
+                                <img src="images/img_sec01_3.png" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <span class="number">/ 03</span>
+                                <div class="item-tit">
+                                    <span>위성기반 정보 서비스</span>
+                                </div>
+                                <span class="item-desc">
+                                    위성 SAR 자료를 활용한 영상 정보 처리
+                                    <br>
+                                    및 분석 서비스
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- // 비즈니스 -->
+            <!-- 프로덕트 -->
+            <section class="product">
+                <div class="container">
+                    <div class="product-tit">
+                        <img src="images/tit_sec02.png" alt="">
+                    </div>
+                    <a href="#" class="view-more">
+                        <span>VIEW MORE</span>
+                    </a>
+                    <div class="orbit">
+                        <i class="satellite p0"></i>
+                        <div class="satl-road">
+                            <a class="point point-1 point-active">
+                                <i></i>
+                                <span>소형 SAR 위성 시스템</span>
+                            </a>
+                            <a class="point point-2">
+                                <i></i>
+                                <span>위성 탑재 장치</span>
+                            </a>
+                            <a class="point point-3">
+                                <i></i>
+                                <span>전기지상지원장비</span>
+                            </a>
+                            <a class="point point-4">
+                                <i></i>
+                                <span>SAR 영상처리시스템</span>
+                            </a>
+                            <a class="point point-5">
+                                <i></i>
+                                <span>소형 SAR 탑재체</span>
+                            </a>
+                        </div>
+                        <div class="swiper sw-orbit">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="sw-orbit-box">
+                                        <h2 class="slide-tit">소형 SAR 위성 시스템</h2>
+                                        <div class="slide-txt">
+                                            Small SAR satellite
+                                            <br>
+                                            (SAR: Synthetic Aperture Radar)
+                                            <i class="slide-img"></i>
+                                            <a href="#" class="slide-more">
+                                                VIEW MORE
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="sw-orbit-box">
+                                        <h2 class="slide-tit">위성 탑재 장치</h2>
+                                        <div class="slide-txt">
+                                            <a href="#">다채널 SAR 장치</a>
+                                            <a href="#">영상자료처리장치</a>
+                                            <a href="#">제어모멘텀자이로 제어장치</a>
+                                            <a href="#">달탐사 궤도선 통신장치</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="sw-orbit-box">
+                                        <h2 class="slide-tit">전기지상지원장비</h2>
+                                        <div class="slide-txt">
+                                            <a href="#">X-밴드 하향링크모듈 전기지상지원장비</a>
+                                            <a href="#">위성 본체 전력계 전기지상지원장비</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="sw-orbit-box">
+                                        <h2 class="slide-tit">SAR 영상처리시스템</h2>
+                                        <span class="slide-txt">
+                                            SARDIP
+                                            <br>
+                                            (SAR Data and Image Processor)
+                                            <i class="slide-img"></i>
+                                            <a href="#" class="slide-more">
+                                                VIEW MORE
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="sw-orbit-box">
+                                        <h2 class="slide-tit">소형 SAR 탑재체</h2>
+                                        <span class="slide-txt">
+                                            Small SAR satellite
+                                            <br>
+                                            (SAR: Synthetic Aperture Radar)
+                                            <i class="slide-img"></i>
+                                            <a href="#" class="slide-more">
+                                                VIEW MORE
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sw-pg"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // 프로덕트 -->
+            <!-- 슬로건 -->
+            <section class="slogan">
+                <div class="container">
+                    <div class="slogan-wrap">
+                        <div class="slogan-box">
+                            <h2 class="slogan-tit">
+                                <img src="images/tit_sec03_1.png" alt="">
+                            </h2>
+                            <div class="slogan-txt">
+                                고객 만족을 위해 노력하는<br>
+                                루미르 주식회사 입니다.
+                            </div>
+                            <a href="#" class="view-more">
+                                <span>VIEW MORE</span>
+                            </a>
+                        </div>
+                        <div class="slogan-box">
+                            <div class="slogan-img">
+                                <img src="images/img_brochure.png" alt="">
+                            </div>
+                            <h2 class="slogan-tit">
+                                <img src="images/tit_sec03_2.png" alt="">
+                            </h2>
+                            <div class="slogan-txt">
+                                새로운 가치와 시장을 창출하는<br>
+                                루미르 주식회사의 내일을 만나보세요.
+                            </div>
+                            <a href="#" class="view-more">
+                                <span>VIEW MORE</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // 슬로건 -->
+            <!-- 뉴스 -->
+            <section class="news">
+                <div class="container">
+                    <div class="news-tit">
+                        <h2>
+                            <img src="images/tit_sec03_3.png" alt="">
+                        </h2>
+                        <a href="#" class="view-more">
+                            <span>VIEW MORE</span>
+                        </a>
+                    </div>
+                    <div class="news-list">
+                        <div class="news-item">
+                            <h2 class="news-item-tit">
+                                "구름이 가려도 보인다"…국내 독자개발 수자원위성 "홍수 안녕"
+                            </h2>
+                            <p class="news-item-desc">
+                                이후 환경부는 충남 태안군에 위치한 한서대 태안비행장에서 시현회를 열고 핵심기술 국산화·개발준비 사항을 점검했다. SAR 탑재체는 실제로 비행기에 실려 태안
+                                인근지역의 수자원을 파악하게 된다. 해당 시현회에는 국내 위성기업 루미르 등도 참여했다.
+                                김동진 환경부 수자원정책관은 '기후위기시대 안전한 물관리를 위해 수자원위성을 역할이 기대된다'며 '민간이 주도하는 우주개발시대를 맞이해 수자원위성 개발사업을
+                                통해 국내 민간위성산업의 육성과 해외수출 기반마련을 위한 정책적 지원을 아끼지 않겠다'고 말했다.
+                            </p>
+                            <span class="news-item-date">2021.10.04</span>
+                        </div>
+                        <div class="news-item">
+                            <h2 class="news-item-tit">
+                                과기부, ICT 미래 유니콘 15개 기업 선정…최대 100억 신용보증 지원
+                            </h2>
+                            <p class="news-item-desc">
+                                과학기술정보통신부는 2021년 글로벌 정보통신기술(ICT) 미래 유니콘 육성사업에 15개 기업을 최종 선정했다고 17일 밝혔다. ▲다비오 ▲디토닉 ▲루미르
+                                ▲모라이 ▲소셜빈▲실크로드소프트▲쓰리디팩토리▲에이치투오호스피탈리티▲엘리스▲원투씨엠▲웰트▲위즈코어▲크로커스▲퓨리오사에이아이▲한국축산데이터 등이 주인공이다.
+                                글로벌 ICT 미래 유니콘 육성사업은 글로벌 성장 잠재력이 높은 정보통신기술(ICT) 융·복합 분야 유망 중소기업을 발굴해 해외진출, 자금(투·융자) 제공 등
+                                종합 지원을 통해 미래 유니콘 기업으로 육성하는 사업이다.
+                            </p>
+                            <span class="news-item-date">2021.05.17</span>
+                        </div>
+                        <div class="news-item">
+                            <h2 class="news-item-tit">
+                                With CAS500, South Korea launches journey toward private-led satellite development
+                            </h2>
+                            <p class="news-item-desc">
+                                SEOUL, South Korea — The March 22 launch of South Korea’s CAS500-1 remote sensing
+                                satellite has marked the beginning of the country’s journey toward the domestic
+                                satellite industry being driven by the private sector.
+                            </p>
+                            <span class="news-item-date">2021.03.23</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // 뉴스 -->
+            <!-- 이야기 -->
+            <section class="story">
+                <div class="container">
+                    <div class="story-tit">
+                        <h2>
+                            <img src="images/tit_sec04.png" alt="">
+                        </h2>
+                        <a href="#" class="view-more">
+                            <span>VIEW MORE</span>
+                        </a>
+                    </div>
+                    <div class="story-list">
+                        <div class="story-box">
+                            <div class="story-img">
+                                <img src="images/story_1.png" alt="">
+                            </div>
+                            <h2 class="story-box-tit">AirborneSAR Test</h2>
+                            <p class="story-box-desc">여름의 시작을 알리는 6월 초, 충남 태안에서 Airborne SAR 테스트가 있었습니다.</p>
+                            <span class="story-box-date">2021.06.11</span>
+                        </div>
+                        <div class="story-box">
+                            <div class="story-img">
+                                <img src="images/story_2.png" alt="">
+                            </div>
+                            <h2 class="story-box-tit">글로벌 ICT 미래 유니콘 육성사업 수여식</h2>
+                            <p class="story-box-desc">루미르가 '2021년 글로벌 정보통신기술(ICT) 미래 유니콘 육성사업(ICT GROWTH 사업)' 참여 기업으로 최종
+                                선정되어 수여식에 참여했습니다.</p>
+                            <span class="story-box-date">2021.06.11</span>
+                        </div>
+                        <div class="story-box">
+                            <div class="story-img">
+                                <img src="images/story_3.png" alt="">
+                            </div>
+                            <h2 class="story-box-tit">LUMIR 2020 Workshop in Gapyeong</h2>
+                            <p class="story-box-desc">늦은 봄, 아직 여름의 무더위가 찾아오기 전 가평으로 워크샵을 다녀왔습니다.</p>
+                            <span class="story-box-date">2021.06.11</span>
+                        </div>
+                        <div class="story-box">
+                            <div class="story-img">
+                                <img src="images/story_3.png" alt="">
+                            </div>
+                            <h2 class="story-box-tit">루미르 워크샵</h2>
+                            <p class="story-box-desc">
+                                조화로운 다양성을 추구하며 평화로운 미래의 수호와
+                                <br>
+                                번영을 위해 우주를 개척해 나가는 LUMIR의 비전
+                            </p>
+                            <span class="story-box-date">2021.06.02</span>
+                        </div>
+                        <div class="story-box">
+                            <div class="story-img">
+                                <img src="images/story_4.png" alt="">
+                            </div>
+                            <h2 class="story-box-tit">루미르 대회의실</h2>
+                            <p class="story-box-desc">
+                                조화로운 다양성을 추구하며 평화로운 미래의 수호와
+                                <br>
+                                번영을 위해 우주를 개척해 나가는 LUMIR의 비전
+                            </p>
+                            <span class="story-box-date">2021.06.02</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // 이야기 -->
+            <!-- 채용 -->
+            <section class="recruit">
+                <div class="container">
+                    <div class="recruit-tit">
+                        <h2>
+                            <img src="images/tit_sec05.png" alt="">
+                        </h2>
+                        <a href="#" class="view-more">
+                            <span>VIEW MORE</span>
+                        </a>
+                    </div>
+                    <div class="recruit-list">
+                        <div class="recruit-box">
+                            <h2 class="recruit-box-tit">인재상</h2>
+                            <p class="recruit-box-desc">
+                                루미르가 추구하는 인재상을
+                                <br>
+                                소개합니다
+                            </p>
+                        </div>
+                        <div class="recruit-box">
+                            <h2 class="recruit-box-tit">채용정보</h2>
+                            <p class="recruit-box-desc">
+                                루미르의 미래와 함께 하실
+                                <br>
+                                소중한 인재를 소개합니다
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // 채용-->
+        </div>
+        <!-- //메인 -->
+        <!-- 하단 -->
+        <footer class="footer">
+            <div class="container">
+                <div class="logo"></div>
+                <div class="footer-info">
+                    <div class="company">
+                        <h2 class="company-tit">Company</h2>
+                        <address class="address">
+                            경기도 용인시 수지구 신수로 767, A-1103
+                            <br>
+                            전화 031-525-3800 | 팩스 031-525-3801
+                        </address>
+                        <span class="copy">Copyright© 2021 LUMIR. ALL RIGHT RESERVED.</span>
+                    </div>
+                    <ul class="footer-menu">
+                        <li><a href="#">제품 및 기술</a></li>
+                        <li><a href="#">헤리티지</a></li>
+                        <li><a href="#">미디어</a></li>
+                        <li><a href="#">스토리</a></li>
+                        <li><a href="#">채용정보</a></li>
+                        <li><a href="#">회사소개</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- // 하단 -->
+    </div>
+</body>
+
+</html>
