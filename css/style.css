@@ -310,7 +310,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     display: block;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: 300px;
     z-index: 999;
     background-color: #fff;
@@ -350,11 +351,13 @@ body {
     opacity: 1;
     transition: opacity .3s .5s;
 }
+
 .comment-on .modal-close {
     transition: opacity .3s;
     opacity: 0;
     visibility: hidden;
 }
+
 .modal-close:hover {
     transform: rotate(225deg);
 }
@@ -392,10 +395,12 @@ body {
     background-color: #333;
     transition: .5s .3s;
 }
+
 .comment-on .modal-comment {
     height: 100%;
     transition: .5s;
 }
+
 .comment-bt {
     position: relative;
     display: inline-block;
@@ -407,22 +412,25 @@ body {
     color: #fff;
     font-size: 17px;
 }
+
 .comment-box {
     position: relative;
     display: block;
-    
+
     padding-top: 10px;
 }
-.comment-box p{
+
+.comment-box p {
     position: relative;
     display: block;
     font-size: 15px;
     margin-top: 40px;
     opacity: 0;
-    color:#fff;
+    color: #fff;
     transition: opacity .3s;
 }
-.comment-on .comment-box p{
+
+.comment-on .comment-box p {
     margin-top: 0;
     opacity: 1;
     transition: opacity .3s .5s;
@@ -2515,6 +2523,15 @@ body {
         animation-delay: 0s !important;
     }
 
+    .story-box-tit {
+        margin-top: 25px;
+        font-size: 20px;
+    }
+    .story-box-desc {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
     .recruit {
         padding: 60px 0;
     }
@@ -2596,4 +2613,14 @@ body {
         font-size: 12px;
     }
 
+}
+
+@media screen and (max-width: 390px) {
+    .modal-wrap {
+        font-size: 14px;
+    }
+
+    .modal-wrap b {
+        font-size: 15px;
+    }
 }
