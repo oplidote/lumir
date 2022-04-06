@@ -432,30 +432,49 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    text-align: left;
+    opacity: 0;
+    transition: opacity .3s;
+    color: #fff;
 }
-.comment-box p {
+.comment-box span{
     position: relative;
     display: block;
-    font-size: 15px;
-    line-height: 17px;
-    opacity: 0;
-    color: #fff;
-    transition: opacity .3s;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    padding-left: 10%;
+}
+.comment-box span::before{
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: calc(10% - 10px);
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #fff;
+    display: block;
 }
 .comment-box strong {
     position: relative;
     display: block;
-    font-size: 16px;
-    margin-bottom: 3%;
+    padding-left: 7%;
+    font-size: 17px;
+    margin-bottom: 2%;
     font-weight: bold;
 
 }
 
-.comment-on .comment-box p {
+.comment-on .comment-box{
     opacity: 1;
     transition: opacity .3s .5s;
 }
-
+.modal-date {
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+}
 @media screen and (max-width: 420px) {
     .caution {
         width: 60px;
@@ -465,7 +484,7 @@ body {
         height: 300px;
         font-size: 13px;
     }
-    .comment-box p {
+    .comment-box span {
         font-size: 13px;
     }
 
